@@ -1,0 +1,15 @@
+version: 0.2
+phases: 
+  install:
+    commands:
+      - sudo apt-get update -y
+      - sudo apt-get install nginx -y
+  build:
+    commands:
+      - cp hi.html /var/www/html/
+  post_build:
+    commands:
+      - echo configuring
+artifacts:
+  filter:
+    - /var/www/html/hi.html    
